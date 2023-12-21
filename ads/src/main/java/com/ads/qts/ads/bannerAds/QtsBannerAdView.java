@@ -47,35 +47,35 @@ public class QtsBannerAdView extends RelativeLayout {
         inflate(getContext(), R.layout.layout_banner_control, this);
     }
 
-    public void loadBanner(Activity activity, String idBanner,String tokenAdjust) {
-        loadBanner(activity, idBanner, new QtsAdCallback(), tokenAdjust);
+    public void loadBanner(Activity activity, String idBanner) {
+        loadBanner(activity, idBanner, new QtsAdCallback());
     }
 
-    public void loadBanner(Activity activity, String idBanner, QtsAdCallback QtsAdCallback, String tokenAdjust) {
-        QtsAd.getInstance().loadBanner(activity, idBanner, QtsAdCallback, tokenAdjust);
+    public void loadBanner(Activity activity, String idBanner, QtsAdCallback QtsAdCallback) {
+        QtsAd.getInstance().loadBanner(activity, idBanner, QtsAdCallback);
     }
 
     public void loadInlineBanner(Activity activity, String idBanner, String inlineStyle, String tokenAdjust) {
-        Admob.getInstance().loadInlineBanner(activity, idBanner, inlineStyle, tokenAdjust);
+        QtsAd.getInstance().loadInlineBanner(activity, idBanner, inlineStyle);
     }
 
-    public void loadInlineBanner(Activity activity, String idBanner, String inlineStyle, AdCallback adCallback, String tokenAdjust) {
-        Admob.getInstance().loadInlineBanner(activity, idBanner, inlineStyle, adCallback, tokenAdjust);
+    public void loadInlineBanner(Activity activity, String idBanner, String inlineStyle, AdCallback adCallback) {
+        QtsAd.getInstance().loadInlineBanner(activity, idBanner, inlineStyle, adCallback);
     }
 
-    public void loadBannerFragment(Activity activity, String idBanner, String tokenAdjust) {
-        QtsAd.getInstance().loadBannerFragment(activity, idBanner, getRootView(), tokenAdjust);
+    public void loadBannerFragment(Activity activity, String idBanner) {
+        QtsAd.getInstance().loadBannerFragment(activity, idBanner, getRootView());
     }
 
-    public void loadBannerFragment(Activity activity, String idBanner, AdCallback adCallback, String tokenAdjust) {
-        QtsAd.getInstance().loadBannerFragment(activity, idBanner, getRootView(), adCallback, tokenAdjust);
+    public void loadBannerFragment(Activity activity, String idBanner, AdCallback adCallback) {
+        QtsAd.getInstance().loadBannerFragment(activity, idBanner, getRootView(), adCallback);
     }
 
-    public void loadInlineBannerFragment(Activity activity, String idBanner, String inlineStyle, String tokenAdjust) {
-        Admob.getInstance().loadInlineBannerFragment(activity, idBanner, getRootView(), inlineStyle, tokenAdjust);
+    public void loadInlineBannerFragment(Activity activity, String idBanner, String inlineStyle) {
+        QtsAd.getInstance().loadBannerInlineFragment(activity, idBanner, getRootView(), inlineStyle);
     }
 
-    public void loadInlineBannerFragment(Activity activity, String idBanner, String inlineStyle, AdCallback adCallback, String tokenAdjust) {
-        Admob.getInstance().loadInlineBannerFragment(activity, idBanner, getRootView(), inlineStyle, adCallback, tokenAdjust);
+    public void loadInlineBannerFragment(Activity activity, String idBanner, String inlineStyle, AdCallback adCallback) {
+        QtsAd.getInstance().loadBannerInlineFragment(activity, idBanner, getRootView(), inlineStyle, adCallback);
     }
 }

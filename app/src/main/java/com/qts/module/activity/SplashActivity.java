@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        QtsAd.getInstance().loadSplashInterstitialAds(SplashActivity.this, BuildConfig.ad_appopen_resume, 5000, 25000, new QtsAdCallback() {
+        QtsAd.getInstance().loadSplashInterstitialAds(SplashActivity.this, BuildConfig.ad_interstitial_splash, 5000, 25000, new QtsAdCallback() {
             @Override
             public void onAdClosed() {
                 super.onAdClosed();
@@ -37,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
                 super.onAdFailedToShow(adError);
                 startMain();
             }
-        }, null);
+        });
     }
 
     private void startMain() {

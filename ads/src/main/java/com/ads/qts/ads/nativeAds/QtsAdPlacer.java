@@ -15,6 +15,7 @@ import com.ads.qts.admob.Admob;
 import com.ads.qts.ads.wrapper.ApAdValue;
 import com.ads.qts.ads.wrapper.ApNativeAd;
 import com.ads.qts.ads.wrapper.StatusAd;
+import com.ads.qts.config.QtsAdConfig;
 import com.ads.qts.funtion.AdCallback;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.gms.ads.AdValue;
@@ -106,7 +107,7 @@ public class QtsAdPlacer {
                             super.onAdImpression();
                             QtsAdPlacer.this.onAdImpression();
                         }
-                    }, null);
+                    }, QtsAdConfig.ADJUST_TOKEN_TIKTOK);
                 });
             }
         } else {
@@ -145,7 +146,7 @@ public class QtsAdPlacer {
                 Log.i(TAG, "native ad in recycle loaded: " + countLoadAd);
                 countLoadAd++;
             }
-        }, Math.min(listAd.size(), settings.getPositionFixAd()), null);
+        }, Math.min(listAd.size(), settings.getPositionFixAd()), QtsAdConfig.ADJUST_TOKEN_TIKTOK);
     }
 
     public boolean isAdPosition(int pos) {

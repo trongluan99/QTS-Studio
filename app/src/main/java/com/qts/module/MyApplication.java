@@ -52,6 +52,7 @@ public class MyApplication extends AdsMultiDexApplication {
         adjustConfig.setEventNamePurchase(EVENT_PURCHASE_ADJUST);
         qtsAdConfig.setAdjustConfig(adjustConfig);
         qtsAdConfig.setIdAdResume(BuildConfig.ads_open_app);
+        qtsAdConfig.setAdjustTokenTiktok("");
 
         listTestDevice.add("EC25F576DA9B6CE74778B268CB87E431");
         qtsAdConfig.setListDeviceTest(listTestDevice);

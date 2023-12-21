@@ -84,10 +84,10 @@ public class QtsNativeAdView extends RelativeLayout {
 
     public void loadNativeAd(Activity activity, String idAd, String tokenAdjust) {
         loadNativeAd(activity, idAd, new QtsAdCallback() {
-        }, tokenAdjust);
+        });
     }
 
-    public void loadNativeAd(Activity activity, String idAd, QtsAdCallback QtsAdCallback, String tokenAdjust) {
+    public void loadNativeAd(Activity activity, String idAd, QtsAdCallback qtsAdCallback) {
         if (layoutLoading == null) {
             setLayoutLoading(R.layout.loading_native_medium);
         }
@@ -95,7 +95,7 @@ public class QtsNativeAdView extends RelativeLayout {
             layoutCustomNativeAd = R.layout.custom_native_admod_medium_rate;
             setLayoutCustomNativeAd(layoutCustomNativeAd);
         }
-        QtsAd.getInstance().loadNativeAd(activity, idAd, layoutCustomNativeAd, layoutPlaceHolder, layoutLoading, QtsAdCallback, tokenAdjust);
+        QtsAd.getInstance().loadNativeAd(activity, idAd, layoutCustomNativeAd, layoutPlaceHolder, layoutLoading, qtsAdCallback);
     }
 
     public void loadNativeAd(Activity activity, String idAd, int layoutCustomNativeAd, int idLayoutLoading, String tokenAdjust) {
@@ -104,9 +104,9 @@ public class QtsNativeAdView extends RelativeLayout {
         loadNativeAd(activity, idAd, tokenAdjust);
     }
 
-    public void loadNativeAd(Activity activity, String idAd, int layoutCustomNativeAd, int idLayoutLoading, QtsAdCallback QtsAdCallback, String tokenAdjust) {
+    public void loadNativeAd(Activity activity, String idAd, int layoutCustomNativeAd, int idLayoutLoading, QtsAdCallback qtsAdCallback) {
         setLayoutLoading(idLayoutLoading);
         setLayoutCustomNativeAd(layoutCustomNativeAd);
-        loadNativeAd(activity, idAd, QtsAdCallback, tokenAdjust);
+        loadNativeAd(activity, idAd, qtsAdCallback);
     }
 }

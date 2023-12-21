@@ -77,9 +77,8 @@ public class MainActivity extends AppCompatActivity {
         qtsNativeAdView.loadNativeAd(this, idNative, new QtsAdCallback() {
             @Override
             public void onAdImpression() {
-                super.onAdImpression();
-            }
-        }, null);
+                super.onAdImpression();}
+        });
 
 
         AppPurchase.getInstance().setPurchaseListener(new PurchaseListener() {
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAdImpression() {
                 super.onAdImpression();
             }
-        }, null);
+        });
         loadAdInterstitial();
 
         findViewById(R.id.btShowAds).setOnClickListener(v -> {
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onInterstitialShow() {
                         super.onInterstitialShow();
                     }
-                }, true, null);
+                }, true);
             } else {
                 loadAdInterstitial();
             }
@@ -151,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onInterstitialShow() {
                         super.onInterstitialShow();
                     }
-                }, true, null);
+                }, true);
             } else {
                 loadAdInterstitial();
             }
@@ -160,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btnShowReward).setOnClickListener(v -> {
             if (rewardAd != null && rewardAd.isReady()) {
-                QtsAd.getInstance().forceShowRewardAd(this, rewardAd, new QtsAdCallback(), null);
+                QtsAd.getInstance().forceShowRewardAd(this, rewardAd, new QtsAdCallback());
                 return;
             }
             rewardAd = QtsAd.getInstance().getRewardAd(this, BuildConfig.ad_reward, null);
@@ -202,7 +201,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadAdInterstitial() {
-
         mInterstitialAd = QtsAd.getInstance().getInterstitialAds(this, idInter, null);
     }
 
@@ -223,7 +221,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadNativeExit() {
-
         if (unifiedNativeAd != null)
             return;
         Admob.getInstance().loadNativeAd(this, BuildConfig.ad_native, new AdCallback() {
@@ -236,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAdImpression() {
                 super.onAdImpression();
             }
-        }, null);
+        }, QtsAdConfig.ADJUST_TOKEN_TIKTOK);
     }
 
     @Override
