@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dip"
-                android:layout_marginEnd="10dip"
+                android:layout_marginRight="10dip"
                 android:layout_marginBottom="5dip"
                 android:background="@color/lightTransparent"
                 android:gravity="center"
@@ -77,7 +77,7 @@
 
         <TextView
             style="@style/AppTheme.Ads"
-            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true" />
     </RelativeLayout>
 </com.facebook.shimmer.ShimmerFrameLayout>

@@ -41,7 +41,6 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="2"
-                    android:text="@string/offline_notification_text"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/_14sdp" />
 
@@ -52,7 +51,7 @@
 
                     <TextView
                         android:id="@+id/ad_advertiser"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="bottom"
@@ -64,7 +63,7 @@
 
                 </LinearLayout>
 
-                <com.ads.qts.util.CustomRatingBar
+                <RatingBar
                     android:id="@+id/ad_stars"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -98,6 +97,7 @@
             android:id="@+id/ad_call_to_action"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+
             android:layout_marginVertical="8dp"
             android:background="@drawable/ads_bg_lib"
             android:gravity="center"
@@ -109,6 +109,7 @@
             app:layout_constraintEnd_toEndOf="@+id/ad_body"
             app:layout_constraintStart_toStartOf="@+id/ad_body"
             app:layout_constraintTop_toBottomOf="@+id/ad_body" />
+
 
         <TextView
             android:id="@+id/textView3"
